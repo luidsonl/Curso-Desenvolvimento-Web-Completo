@@ -1,0 +1,36 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-size: 1em;
+	font-family:Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+	background: #006278;
+}
+/*formatação do logo e do menu*/
+header{
+	background: #00D0FF;
+	text-align: center;
+	padding: 15px;
+}
+#area-logo, #area-menu{
+	padding: 10px;
+}
+a:link, a:visited{
+	color: white;
+	text-decoration: none;
+	padding: 10px;
+	margin: 15px;
+} 
+a:hover{
+	color: #00D0FF;
+	background: #006278;
+}
+/*Formatação geral*/
+h1{
+	color: #006278;
+	font-size: 3em;
+}
+.white{
+	color: white;
+}

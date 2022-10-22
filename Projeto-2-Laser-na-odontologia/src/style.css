@@ -1,0 +1,42 @@
+body{
+	background: black;
+	color: white;
+	font-family: serif, arial;
+	margin: 50px;
+	font-size: 20px;
+
+}
+h1{
+	font-family: cursive;
+	font-size: 60px;
+	text-align: center;
+}
+h2{
+	margin: 20px;
+}
+.links{
+	text-align: center;
+	background: darkred;
+	padding: 10px;
+}
+.images{
+	text-align: center;
+}
+a{
+	padding: 5%;
+	color: white;
+	text-decoration: none;
+}
+p{
+	font-family:serif; arial;
+	margin: 40px;
+	line-height: 30px;
+	text-align: justify;
+}
+.creditos{
+background: darkred;
+margin-top: 50px;
+padding: 10px;
+color: gray;
+text-align: center;
+}

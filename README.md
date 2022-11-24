@@ -9,3 +9,6 @@
 
 ### 3. TecBlog
 * Site simples feito com o uso de html e css.
+
+### 4. Notícias da Cidade
+* Site simples feito com o uso de html e css.

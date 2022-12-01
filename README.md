@@ -12,3 +12,6 @@
 
 ### 4. Notícias da Cidade
 * Site simples feito com o uso de html e css.
+
+### 5. Chalé Hotel
+* Site simples feito com o uso de html e css.

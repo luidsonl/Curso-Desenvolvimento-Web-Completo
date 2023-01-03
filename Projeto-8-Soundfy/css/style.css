@@ -1,0 +1,183 @@
+html, body , #home{
+	height: 100%;
+	overflow-x: hidden;
+}
+body{
+	background: url(../img/back.png),
+				
+				linear-gradient(50deg, gray, black);
+				background-attachment: fixed;
+				font-family: Helvetica, Arial, sans-serif;
+}
+.background-transparent{
+	background: rgba(0, 0, 0, 0.65);
+}
+.divider{
+	width: 1px;
+	background: white;
+	margin: 10px 15px;
+}
+
+#home{
+	text-align: center;
+}
+/*Tipografia*/
+h1{
+	font-weight: bold;
+	margin-bottom: 50px;
+    
+    color: #e3e3e3;
+    letter-spacing: -0.05em;
+    text-shadow: 10px 0px 4px #000;
+}
+h2{
+	font-size: 3em;
+	font-weight: 700;
+	letter-spacing: -0.04em;
+}
+h3{
+	font-size: 2em;
+	font-weight: 700;
+	letter-spacing: -0.04em;
+}
+a{
+	text-decoration: none;
+}
+/*HOME*/
+/*botoes*/
+#home{
+	background: rgba(0, 0, 0, 0.6);
+}
+.btn-custom{
+	color: white;
+	text-transform: uppercase;
+	border-radius: 500px;
+	transition: background 0.5s, color 0.5s;
+	padding: 10px 25px;
+}
+
+
+.btn-white{
+	background: rgba(255, 255, 255, 0.8);
+	color:rgba(35, 35, 35, 0.8);
+}
+.btn-white:hover{
+	background: rgba(35, 35, 35, 1.0);
+	color:rgba(255, 255, 255, 1.0);
+}
+.btn-nice{
+	color:rgba(255, 255, 255, 0.8);
+	background: rgba(35, 35, 255, 0.8);
+}
+.btn-nice:hover{
+	background: rgba(35, 255, 35, 1.0);
+	color:rgba(255, 255, 255, 1.0);
+}
+.carousel-control-prev, .carousel-control-next{
+	width: 5%;
+}
+/*fim botoes*/
+/*FIM HOME*/
+
+
+/*Conteudos*/
+/*Services*/
+.box{
+	padding: 20px 0;
+}
+#services{
+	background: #111;
+	color: white;
+}
+#services h2{
+	color: white;
+}
+#services h3{
+	color: rgb(145, 145, 145);
+}
+.albums{
+	padding: 20px 10px;
+}
+/*Features*/
+.rotate{
+	transform: rotate(25deg);
+	padding-left: 80px;
+}
+#features{
+	background: rgba(0, 0, 0, 0.6);
+	color: rgb(250, 250, 200);
+}
+#features h2{
+	color: white;
+}
+#features h3{
+	color: rgb(200, 250, 250);
+}
+/*footer*/
+footer{
+	background: #111;
+	color: white;
+	padding:50px 0 20px 0;
+	position: relative;
+}
+footer h4{
+	color: #919496;
+	font-size: 0.8em;
+	text-transform: uppercase;
+}
+footer .navbar-nav a{
+	color: white;
+	font-size: 0.8em;
+}
+footer ul{
+	list-style: none;
+}
+footer ul li{
+	float: right;
+	margin: 0 5px;
+}
+footer ul li a{
+	color: #999;
+}
+/*Media query*/
+
+
+
+/* Medium devices (768px and down)*/
+@media (max-width: 768px) {
+	.btn-custom{
+		margin: 10px 15px;
+		font-size: 1em;
+		margin-top: 15px;
+	}
+footer h4{
+	margin-top: 20px;
+}
+}
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+	h1{
+		font-size: 3em;
+	}
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+	h1{
+		font-size: 4em;
+	}
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+	h1{
+		font-size: 5em;
+	}
+}
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+	h1{
+		font-size:6em;
+	}
+}

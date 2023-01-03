@@ -1,5 +1,6 @@
 # Curso-Desenvolvimento-Web-Completo_2022
-## Projetos desenvolvidos no curso Desenvolvimento Web Completo 2022
+## Projetos desenvolvidos:
+
 ### 1. Unes
 * Site muito simples feito apenas com o uso de html.
 
@@ -25,3 +26,10 @@
 * Adaptação para o bootstrap 5.2.3
 * Ícones do FontAwesome
 * Textos do ChatGPT
+
+### 8. Soundfy
+* Inspirado na antiga página inicial do Spotify
+* Adaptação para o bootstrap 5.2.3
+* Ícones do FontAwesome
+* Textos do ChatGPT
+* Imagens geradas pela DALL-E 2

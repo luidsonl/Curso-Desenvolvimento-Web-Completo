@@ -1,4 +1,4 @@
-# Curso-Desenvolvimento-Web-Completo_2022
+# Curso Desenvolvimento Web Completo
 ## Projetos desenvolvidos:
 
 ### 1. Unes
@@ -33,3 +33,6 @@
 * Ícones do FontAwesome
 * Textos do ChatGPT
 * Imagens geradas pela DALL-E 2
+
+### 9. App - Calculadora
+* App simples feito com javascript

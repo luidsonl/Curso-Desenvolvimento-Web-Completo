@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculadora</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+	<div id="calculator">
+		<input type="text" name="display" id="display" placeholder="0" disabled="disabled">
+		<div id="keyboard">
+			<div class="left-box">
+				<button class="clear" onclick="calc('action', 'clear')">C</button>
+				<button onclick="calc('action', '/')">/</button>
+				<button onclick="calc('value', '7')">7</button>
+				<button onclick="calc('value', '8')">8</button>
+				<button onclick="calc('value', '9')">9</button>
+				<button onclick="calc('value', '4')">4</button>
+				<button onclick="calc('value', '5')">5</button>
+				<button onclick="calc('value', '6')">6</button>
+				<button onclick="calc('value', '1')">1</button>
+				<button onclick="calc('value', '2')">2</button>
+				<button onclick="calc('value', '3')">3</button>
+				<button class="zero" onclick="calc('value', '0')">0</button>
+				<button onclick="calc('value', '.')">,</button>
+			</div>
+
+			<div class="right-box">
+				<button onclick="calc('action', '*')">X</button>
+				<button onclick="calc('action', '-')">-</button>
+				<button onclick="calc('action', '+')">+</button>
+				<button class="equals" onclick="calc('action', '=')">=</button>
+			</div>
+		</div>
+	</div>
+
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

@@ -139,6 +139,7 @@ footer ul li{
 footer ul li a{
 	color: #999;
 }
+
 /*Media query*/
 
 
@@ -159,6 +160,9 @@ footer h4{
 	h1{
 		font-size: 3em;
 	}
+	footer img{
+	width: 150px;
+}
 }
 
 /* Medium devices (tablets, 768px and up)*/
@@ -166,6 +170,8 @@ footer h4{
 	h1{
 		font-size: 4em;
 	}
+	footer img{
+	width: 95px;
 }
 
 /* Large devices (desktops, 992px and up)*/
@@ -173,6 +179,9 @@ footer h4{
 	h1{
 		font-size: 5em;
 	}
+	footer img{
+	width: 150px;
+}
 }
 
 /* Extra large devices (large desktops, 1200px and up)*/

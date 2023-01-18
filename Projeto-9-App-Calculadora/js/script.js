@@ -34,7 +34,7 @@ function calc(type, value){
 	}
 }
 
-//limpa a tela e o previousValue
+//limpa a tela
 function clear(){
 	document.getElementById('display').value = null;
 }

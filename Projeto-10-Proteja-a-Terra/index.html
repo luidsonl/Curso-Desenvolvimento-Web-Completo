@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Proteja a Terra</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body onresize="adjustScreen()">
+
+	<div id="main-menu-screen">
+		<div class="menu">
+			<img src="img/game.png">
+			<div>
+				<select id="select-speed">
+					<option value="" selected="selected" >Selecione a velocidade</option>
+					<option value=2000 >Normal</option>
+					<option value=1000 >Rápido</option>
+					<option value=500 >Uno de firma</option>
+				</select>
+				<select id="select-time">
+					<option value="" selected='selected'>Selecione o tempo</option>
+					<option value="20" >20 segundos</option>
+					<option value="30" >30 segundos</option>
+					<option value="90">1 minuto e meio</option>
+				</select>
+				<button onclick="startGame()">Iniciar Jogo</button>
+			</div>
+		</div>
+		<div id="about"><a href="https://github.com/luidsonl">Meu GitHub</a></div>
+	</div>
+
+
+	<div id="game-screen">
+		<div id="hud">
+		<div id="life">
+			<img id="v1" src="img/cidade-inteira.png">
+			<img id="v2" src="img/cidade-inteira.png">
+			<img id="v3" src="img/cidade-inteira.png">
+			<img id="v4" src="img/cidade-inteira.png">
+			<img id="v5" src="img/cidade-inteira.png">
+		</div>
+		<div id="time">
+			Tempo restante: <span id="counter"></span>
+		</div>
+	</div>
+	</div>
+
+
+	<div id="victory-screen">
+		<div class="menu">
+			<img src="img/vitoria.png">
+			<div>
+				<button onclick="startGame()">Reiniciar</button>
+				<button onclick="showMenuScreen()">Menu</button>
+			</div>
+		</div>
+		
+	</div>
+
+
+	<div id="game-over-screen">
+		<div class="menu">
+			<img src="img/game-over.png">
+			<div>
+				<button onclick="startGame()">Reiniciar</button>
+				<button onclick="showMenuScreen()">Menu</button>
+			</div>
+	</div>
+	</div>
+
+
+
+
+<script type="text/javascript" src="js/game.js"></script>
+
+</body>
+</html>

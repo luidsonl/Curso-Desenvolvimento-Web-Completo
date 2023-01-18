@@ -35,4 +35,9 @@
 * Imagens geradas pela DALL-E 2
 
 ### 9. App - Calculadora
-* App simples feito com javascript
+* App simples feito com javaScript
+
+### 10. Jogo - Proteja a Terra
+* Jogo simples feito com JavaScript
+* Algumas imagens foram criadas com o krita
+* Código adatpado para uma única página HTML

@@ -52,3 +52,7 @@ https://www.udemy.com/course/web-completo/
 * Função de adicionar entrada de capital
 * Função de adicionar saída de capital
 * Função de exibir e filtrar registros
+
+### 12. App - Help Desk
+* App simples feito com php no backend
+* Passível de melhorias

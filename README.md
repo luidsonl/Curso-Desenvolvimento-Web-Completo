@@ -55,4 +55,9 @@ https://www.udemy.com/course/web-completo/
 
 ### 12. App - Help Desk
 * App simples feito com php no backend
-* Passível de melhorias
+* Precisa de melhorias
+
+### 13. App - Send Mail
+* App simples feito com php no backend
+* Precisa de melhorias na segurança
+* Uso da biblioteca PHPMailer

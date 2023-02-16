@@ -61,3 +61,6 @@ https://www.udemy.com/course/web-completo/
 * App simples feito com php no backend
 * Precisa de melhorias na segurança
 * Uso da biblioteca PHPMailer
+
+### 14. App - Pesquisa CEP
+* App simples feito com a API viacep

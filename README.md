@@ -64,3 +64,15 @@ https://www.udemy.com/course/web-completo/
 
 ### 14. App - Pesquisa CEP
 * App simples feito com a API viacep
+
+### 15 App - Lista de Tarefas
+* Uso do PHP no backend
+* PDO
+* Integração com o banco de dados MySQL
+* Funções
+	*  Adicionar nova tarefa
+	*  Exibir tarefas pendentes
+	* Exibir todas as tarefas
+	* Ecluir tarefa
+	* Editar tarefa
+	* Definir tarefa como cncluida

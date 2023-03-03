@@ -95,11 +95,19 @@ $dashboard = new Dashboard();
 $conexao = new Conexao();
 $bd = new Bd($conexao, $dashboard);
 
-$dashboard->__set('data_inicio', '2018-08-01');
-$dashboard->__set('data_fim', '2018-08-31');
+
+
+$competencia = explode('-', $_GET['competencia']);
+$ano = $competencia[0];
+$mes = $competencia[1];
+$dias_do_mes = cal_days_in_month(CAL_GREGORIAN, $mes, $ano);
+
+
+$dashboard->__set('data_inicio', $ano . '-' . $mes . '-01');
+$dashboard->__set('data_fim', $ano . '-' . $mes . '-' . $dias_do_mes);
 $dashboard->__set('numero_vendas', $bd->getNumeroVendas());
 $dashboard->__set('total_vendas', $bd->getTotalVendas());
 
-print_r($_GET);
+echo json_encode($dashboard);
 
 ?>

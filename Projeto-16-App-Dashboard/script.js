@@ -24,46 +24,32 @@ $(document).ready(() => {
 function JQueryUpdate(){
 
 	// Ajax
-	/*$('#competencia').on('change', e=>{
-		
-
-		let competencia = $(e.target).val();
-
-		$.ajax({
-			type: 'GET',
-			url: 'app.php',
-			data: `competencia=${competencia}`,
-			success:(dados)=>{console.log(dados)},
-			error:(erro)=>{console.error(erro)}
-		})
-
-	})*/
 	$('#ano').on('change', ()=>{
+		ajaxUpdate();
 		
-
-		let competencia = $('#ano').val() + $('#mes').val();
-
-		$.ajax({
-			type: 'GET',
-			url: 'app.php',
-			data: `competencia=${competencia}`,
-			success:(dados)=>{console.log(dados)},
-			error:(erro)=>{console.error(erro)}
-		})
 
 	})
 	$('#mes').on('change', ()=>{
+		ajaxUpdate();
 		
+	})
+}
 
-		let competencia = $('#ano').val() + $('#mes').val();
+function ajaxUpdate(){
+	if($('#ano').val() && $('#mes').val()){
+
+		let competencia = $('#ano').val()+ '-' + $('#mes').val();
 
 		$.ajax({
 			type: 'GET',
 			url: 'app.php',
 			data: `competencia=${competencia}`,
-			success:(dados)=>{console.log(dados)},
+			dataType: 'json',
+			success:(dados)=>{
+				$('#numero_vendas').html(dados.numero_vendas);
+				$('#total_vendas').html(dados.total_vendas);
+				},
 			error:(erro)=>{console.error(erro)}
 		})
-
-	})
+	}
 }

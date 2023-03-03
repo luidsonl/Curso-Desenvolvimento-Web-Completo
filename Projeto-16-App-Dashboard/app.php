@@ -100,6 +100,6 @@ $dashboard->__set('data_fim', '2018-08-31');
 $dashboard->__set('numero_vendas', $bd->getNumeroVendas());
 $dashboard->__set('total_vendas', $bd->getTotalVendas());
 
-print_r($dashboard);
+print_r($_GET);
 
 ?>

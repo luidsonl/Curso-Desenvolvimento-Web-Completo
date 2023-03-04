@@ -76,3 +76,9 @@ https://www.udemy.com/course/web-completo/
 	* Ecluir tarefa
 	* Editar tarefa
 	* Definir tarefa como cncluida
+
+### 16 App - Dashboard
+* Php, jquery e ajax
+* Front-end feito com html, bootstrap e javascript
+* Integração de front-end, back-end e banco de dados com o uso do php
+* Função de filtrar por mês e exibir os valores a partir das informações do banco de dados.

@@ -2,7 +2,8 @@ $(document).ready(() => {
 
 	$('#dashboard').on('click',()=>{
 		$('#pagina').load('content/dashboard.html', ()=>{
-			JQueryUpdate()
+			JQueryUpdate();
+			ajaxUpdate();
 		})
 	})
 
@@ -16,6 +17,7 @@ $(document).ready(() => {
 
 	// Exibe a dashboard por padrão
 	$('#dashboard').click();
+
 
 		
 })
@@ -36,7 +38,8 @@ function JQueryUpdate(){
 }
 
 function ajaxUpdate(){
-	if($('#ano').val() && $('#mes').val()){
+
+	//if($('#ano').val() && $('#mes').val()){
 
 		let competencia = $('#ano').val()+ '-' + $('#mes').val();
 
@@ -48,8 +51,16 @@ function ajaxUpdate(){
 			success:(dados)=>{
 				$('#numero_vendas').html(dados.numero_vendas);
 				$('#total_vendas').html(dados.total_vendas);
+				$('#clientes_ativos').html(dados.clientes_ativos);
+				$('#clientes_inativos').html(dados.clientes_inativos);
+				$('#numero_reclamacoes').html(dados.numero_reclamacoes);
+				$('#numero_elogios').html(dados.numero_elogios);
+				$('#numero_sugestoes').html(dados.numero_sugestoes);
+				$('#total_despesas').html(dados.total_despesas);
+
+				//console.log(dados);
 				},
 			error:(erro)=>{console.error(erro)}
 		})
-	}
+	//}
 }

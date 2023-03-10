@@ -4,11 +4,31 @@ namespace App\Controllers;
 
 class IndexController{
 
+	private $view;
+
+	public function __construct(){
+		$this->view = new \stdClass();
+	}
+
 	public function index(){
-		echo 'action index disparada';
+
+		$this->view->dados = array('sofá','cadeira','cama');
+		$this->render('index');
 	}
 
 	public function sobreNos(){
-		echo 'action sobreNos disparada';
+
+		$this->view->dados = array('Notebook', 'Smartphone');
+		$this->render('sobreNos');
+	}
+
+	public function render($view){
+		$classAtual = get_class();
+		$classAtual = str_replace('App\\Controllers\\', '', $classAtual);
+		$classAtual = strtolower(str_replace('Controller','',$classAtual));
+
+		require_once "../App/Views/$classAtual/$view.phtml";
 	}
 }
+
+?>

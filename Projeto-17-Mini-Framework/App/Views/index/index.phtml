@@ -2,8 +2,12 @@
 <hr>
 
 <?php
-	foreach($this->view->dados as $indice => $valor){
-		echo $valor;
+	
+	echo'<pre>';
+	//print_r($this->view->dados);
+	foreach($this->view->dados as $indice => $produto){
+		echo $produto['id'] . '-' . $produto['descricao'] . '-' . $produto['preco'];
 		echo '<br>';
+
 	}
 ?>

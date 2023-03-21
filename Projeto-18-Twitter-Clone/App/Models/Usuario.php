@@ -52,7 +52,25 @@ class Usuario extends Model{
 
 		return $stmt->fetchAll(\PDO::FETCH_ASSOC);
 	}
+	// Autenciar email e senha
+	public function autenticar (){
+		$query = "select id , username, email from users where email = :email and password = :password";
 
+		$stmt = $this->db->prepare($query);
+		$stmt->bindValue(':email', $this->__get('email'));
+		$stmt->bindValue(':password', $this->__get('password'));
+		$stmt->execute();
+
+		$user = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+		if (!empty($user['id'])&&(!empty($user['username']))) {
+
+			$this->__set('id',$user['id']);
+			$this->__set('username',$user['username']);
+		}
+
+		return $this;
+	}
 
 }
 

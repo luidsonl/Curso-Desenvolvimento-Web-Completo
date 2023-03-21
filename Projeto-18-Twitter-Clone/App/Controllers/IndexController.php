@@ -44,7 +44,7 @@ class IndexController extends Action {
 
 		$usuario->__set('username', $_POST['username']);
 		$usuario->__set('email', $_POST['email']);
-		$usuario->__set('password', $_POST['password']);
+		$usuario->__set('password', md5($_POST['password']));
 
 		if ($usuario->validarCadastro()){
 

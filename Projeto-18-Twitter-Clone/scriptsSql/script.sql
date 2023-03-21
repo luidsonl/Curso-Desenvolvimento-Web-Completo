@@ -6,5 +6,5 @@ CREATE TABLE users(
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(100) NOT NULL,
     email VARCHAR(150) NOT NULL,
-    password VARCHAR(30) NOT NULL
+    password VARCHAR(32) NOT NULL
 );

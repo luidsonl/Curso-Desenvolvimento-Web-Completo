@@ -16,17 +16,17 @@
         <div class="row">
           <div class="col">
             
-            <form action="" method="post">
+            <form action="/registrar" method="post">
               <div class="mb-2">
-                <input type="text" class="form-control" placeholder="Nome">
+                <input type="text" value="<?php echo $this->view->user['username']; ?>" name="username" class="form-control" placeholder="Nome">
               </div>
               
               <div class="mb-2">
-                <input type="text" class="form-control" placeholder="E-mail">
+                <input type="text" value="<?php echo $this->view->user['email']; ?>"name="email" class="form-control" placeholder="E-mail">
               </div>
 
               <div class="mb-2">
-                <input type="password" class="form-control" placeholder="Senha">
+                <input type="password" value="<?php echo $this->view->user['password']; ?>" name="password" class="form-control" placeholder="Senha">
               </div>
               
               <div class="mt-4 mb-4">
@@ -34,7 +34,20 @@
                   Ao inscrever-se, você concorda com os Termos de Serviço e com as Políticas de Privacidade, incluindo o Uso de Cookies. Outras pessoas poderão encontrar você pelo e-mail ou número de telefone fornecido · Opções de Privacidade
                 </small>
               </div>
-              <button type="submit" class="btn btn-primary btn-block">Inscrever-se</button>
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary btn-block">Inscrever-se</button>
+              </div>
+
+              <?php if($this->view->erroCadastro == 2){ ?>
+                <small class="form-text text-danger">
+                  O email informado já foi cadastrado, faça login ou use outro email.
+                </small>
+              <?php } ?>
+              <?php if($this->view->erroCadastro == 1){ ?>
+                <small class="form-text text-danger">
+                  Informação incompleta, tente novamento.
+                </small>
+              <?php } ?>
             </form>
 
           </div>

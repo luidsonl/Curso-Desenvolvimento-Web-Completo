@@ -26,6 +26,17 @@ class Tweet extends Model{
 
 		return $this;
 	}
+	// Excluir
+	public function deleteTweet(){
+		$query = "delete from tweets where id = :tweet_id and user_id = :id";
+		$stmt = $this->db->prepare($query);
+
+		$stmt->bindValue(':tweet_id', $this->__get('id'));
+		$stmt->bindValue(':id', $_SESSION['id']);
+
+		$stmt->execute();
+		return true;
+	}
 
 	//Recuperar
 	public function getAll(){
@@ -44,11 +55,12 @@ class Tweet extends Model{
 				or t.user_id in (select followed_id from connections where user_id = :user_id)
 			order by
 				t.tweet_date desc";
-				
+
 		$stmt = $this->db->prepare($query);
 		$stmt->bindValue(':user_id', $this->__get('user_id'));
 		$stmt->execute();
 		return $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
 	}
+
 }

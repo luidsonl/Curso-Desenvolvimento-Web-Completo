@@ -36,6 +36,18 @@ class AppController extends Action {
 
 		header('Location: /timeline');	
 	}
+	public function deleteTweet(){
+
+		$this->validaLogin();
+		
+		// deleta tweet
+		$tweet = Container::getModel('Tweet');
+		$tweet->__set('id', $_GET['tweet_id']);
+		$tweet->deleteTweet();
+
+		header('Location: /timeline');	
+	}
+
 
 	public function validaLogin(){
 

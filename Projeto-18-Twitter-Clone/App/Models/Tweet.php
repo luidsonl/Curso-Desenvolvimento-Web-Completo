@@ -41,8 +41,10 @@ class Tweet extends Model{
 				left join users as u on (t.user_id = u.id)
 			where 
 				user_id = :user_id
+				or t.user_id in (select followed_id from connections where user_id = :user_id)
 			order by
 				t.tweet_date desc";
+				
 		$stmt = $this->db->prepare($query);
 		$stmt->bindValue(':user_id', $this->__get('user_id'));
 		$stmt->execute();

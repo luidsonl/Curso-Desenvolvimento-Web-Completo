@@ -26,7 +26,7 @@ class AppController extends Action {
 
 	public function tweet(){
 
-		validaLogin();
+		$this->validaLogin();
 		
 		// publica tweet
 		$tweet = Container::getModel('Tweet');

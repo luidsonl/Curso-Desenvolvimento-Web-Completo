@@ -10,7 +10,7 @@ use MF\Model\Container;
 
 
 class AppController extends Action {
-	
+
 	public function timeline(){
 
 		$this->validaLogin();
@@ -54,12 +54,34 @@ class AppController extends Action {
 		if($pesquisarPor != ''){
 			$usuario = Container::getModel('Usuario');
 			$usuario-> __set('username', $pesquisarPor);
-			$usuarios = $usuario->getAll();
+			$usuario-> __set('id', $_SESSION['id']);
+			$usuarios = $usuario->getAll();	
 
 		}
 
 		$this->view->usuarios = $usuarios;
 		$this->render('quemSeguir');
+	}
+
+	public function acao(){
+		$this->validaLogin();
+
+		$acao = isset($_GET['acao']) ? $_GET['acao'] : '';
+		$followed_id = isset($_GET['id_usuario']) ? $_GET['id_usuario'] : '';
+
+		$usuario = Container::getModel('Usuario');
+		$usuario->__set('id', $_SESSION['id']);
+
+		if ($acao == 'seguir') {
+			$usuario->seguirUsuario($followed_id);
+
+		}else if ($acao == 'deixar_de_seguir') {
+			$usuario->deixarSeguirUsuario($followed_id);
+		}
+
+		header('Location: /quem_seguir');
+
+
 	}
 }
 

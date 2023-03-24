@@ -21,7 +21,7 @@ class Usuario extends Model{
 		$stmt = $this->db->prepare($query);
 		$stmt->bindValue(':username', $this->__get('username'));
 		$stmt->bindValue(':email', $this->__get('email'));
-		$stmt->bindValue(':password', $this->__get('password'));
+		$stmt->bindValue(':password', md5($this->__get('password')));
 		$stmt->execute();
 
 		return $this;
@@ -73,12 +73,56 @@ class Usuario extends Model{
 	}
 
 	public function getAll(){
-		$query = "select id, username, email from users where username like :username";
+		$query = "
+			select 
+				u.id, 
+				u.username, 
+				u.email, 
+				(
+					select
+						count(*)
+					from
+						connections as c
+					where
+						c.user_id = :user_id and followed_id = u.id
+				)as following
+			from 
+				users as u
+			where username like :username and id != :user_id
+			";
 		$stmt = $this->db->prepare($query);
 		$stmt->bindValue(':username', '%'.$this->__get('username').'%');
+		$stmt->bindValue(':user_id', $this->__get('id'));
 		$stmt->execute();
 
 		return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+	}
+
+	public function seguirUsuario($followed_id){
+		$query = "
+			insert into connections(user_id, followed_id)
+			values(:user_id, :followed_id)
+			";
+		$stmt = $this->db->prepare($query);
+
+		$stmt->bindValue(':user_id', $this->__get('id'));
+		$stmt->bindValue(':followed_id', $followed_id);
+
+		$stmt->execute();
+		return true;
+	}
+
+	public function deixarSeguirUsuario($followed_id){
+		$query = "
+			delete from connections where user_id = :user_id and followed_id = :followed_id
+			";
+		$stmt = $this->db->prepare($query);
+
+		$stmt->bindValue(':user_id', $this->__get('id'));
+		$stmt->bindValue(':followed_id', $followed_id);
+
+		$stmt->execute();
+		return true;
 	}
 
 }

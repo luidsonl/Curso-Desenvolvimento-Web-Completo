@@ -31,7 +31,6 @@ class IndexController extends Action {
 
 	public function registrar(){
 		$this->view->erroCadastro = 0;
-		$this->view->user = array();
 		$this->view->user = array(
 				'username'=>$_POST['username'],
 				'email'=>$_POST['email'],
@@ -44,7 +43,7 @@ class IndexController extends Action {
 
 		$usuario->__set('username', $_POST['username']);
 		$usuario->__set('email', $_POST['email']);
-		$usuario->__set('password', md5($_POST['password']));
+		$usuario->__set('password', $_POST['password']);
 
 		if ($usuario->validarCadastro()){
 

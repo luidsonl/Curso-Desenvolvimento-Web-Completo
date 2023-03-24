@@ -15,3 +15,9 @@ CREATE TABLE tweets(
     tweet VARCHAR(140) NOT NULL,
     tweet_date DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE connections(
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    followed_id INT NOT NULL
+);

@@ -91,18 +91,63 @@
 				<nav aria-label="Page navigation example">
 				  <ul class="pagination">
 				    <li class="page-item">
-				      <a class="page-link" href="#" aria-label="Previous">
-				        <span aria-hidden="true">&laquo;</span>
-				        <span class="sr-only">Previous</span>
+				      <a class="page-link" href="?pagina=1" aria-label="Previous">
+				        <span>Primeira</span>
 				      </a>
 				    </li>
-				    <li class="page-item"><a class="page-link" href="#">1</a></li>
-				    <li class="page-item"><a class="page-link" href="#">2</a></li>
-				    <li class="page-item"><a class="page-link" href="#">3</a></li>
+
+				    <?php 
+				    $pagina = isset($_GET['pagina'])? $_GET['pagina'] : 1; 
+				    $total_de_paginas = $this->view->total_de_paginas;
+				    $nav_step = 2;
+				    $nav_offset = $pagina - $nav_step;
+				    $nav_limit = $pagina + $nav_step;
+
+
+
+
+				    if ($pagina - $nav_step < 1){
+				    	$nav_offset = 1;
+				    	$nav_limit = $nav_step * 2 + 1;
+
+				    	if($nav_limit>$total_de_paginas){
+				    		$nav_limit = $total_de_paginas;
+				    	}
+				    	
+				    }
+				    if ($pagina + $nav_step > $total_de_paginas){
+				    	$nav_limit = $total_de_paginas;
+				    	$nav_offset = $total_de_paginas - ($nav_step * 2);
+
+				    	if($nav_offset<1){
+				    		$nav_offset = 1;
+				    	}
+				    	
+
+				    
+				    }
+
+				    ?>
+
+				    <?php for($i=$nav_offset; $i <= $nav_limit ; $i++){ ?>
+				    	<li class="page-item
+				    		<?php 
+				    		if($i == $pagina){
+				    			echo 'active';
+				    		} ?>
+				    	">
+				    		<a class="page-link" href="?pagina=<?php echo $i?>">
+				    		<?php echo $i ?>
+				    			
+				    		</a>
+				    	</li>
+
+				    <?php } ?>
+				    
+				    
 				    <li class="page-item">
-				      <a class="page-link" href="#" aria-label="Next">
-				        <span aria-hidden="true">&raquo;</span>
-				        <span class="sr-only">Next</span>
+				      <a class="page-link" href="?pagina=<?php echo $total_de_paginas ?>" aria-label="Next">
+				        <span class="">Última</span>
 				      </a>
 				    </li>
 				  </ul>

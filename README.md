@@ -86,3 +86,12 @@ https://www.udemy.com/course/web-completo/
 ### 17 Miniframework
 * PHP
 * Criação de um framework simples usando arquitetura MVC
+
+### 18 Twitter Clone
+* O Miniframework foi usado como  base
+* Funcionalidades:
+	* Criar conta e logar
+	* Pesquisar usuários
+	* Seguir e deixar de seguir usuarios
+	* Publicar  e excluir tweets
+	* Visualizar tweets na timeline

@@ -124,7 +124,48 @@ class Usuario extends Model{
 		$stmt->execute();
 		return true;
 	}
+	//informações do usuário
+	public function getInfoUsuario(){
+		$query = "select username from users where id = :user_id";
 
+		$stmt = $this->db->prepare($query);
+		$stmt->bindValue(':user_id', $this->__get('id'));
+		$stmt->execute();
+
+		return $stmt->fetch(\PDO::FETCH_ASSOC);
+	}
+
+	//total de tweets
+	public function getTotalTweets(){
+		$query = "select count(*) as total_tweets from tweets where user_id = :user_id";
+
+		$stmt = $this->db->prepare($query);
+		$stmt->bindValue(':user_id', $this->__get('id'));
+		$stmt->execute();
+
+		return $stmt->fetch(\PDO::FETCH_ASSOC);
+	}
+
+	// total de usuarios seguindo
+	public function getTotalSeguindo(){
+		$query = "select count(*) as total_seguindo from connections where user_id = :user_id";
+
+		$stmt = $this->db->prepare($query);
+		$stmt->bindValue(':user_id', $this->__get('id'));
+		$stmt->execute();
+
+		return $stmt->fetch(\PDO::FETCH_ASSOC);
+	}
+	// total de seguidores
+	public function getTotalSeguidores(){
+		$query = "select count(*) as total_seguidores from connections where followed_id = :user_id";
+
+		$stmt = $this->db->prepare($query);
+		$stmt->bindValue(':user_id', $this->__get('id'));
+		$stmt->execute();
+
+		return $stmt->fetch(\PDO::FETCH_ASSOC);
+	}
 }
 
 ?>

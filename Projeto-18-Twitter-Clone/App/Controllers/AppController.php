@@ -18,7 +18,16 @@ class AppController extends Action {
 		// Recuperar tweets
 		$tweet = Container::getModel('Tweet');
 		$tweet->__set('user_id', $_SESSION['id']);
-		$tweets = $tweet->getAll();
+		
+
+		// Variáveis de paginação
+		$total_registros_pagina = 10;
+		$deslocamento = 0;
+		$pagina = 1;
+
+		//$tweets = $tweet->getAll();
+		echo "<br><br><br><br>Página atual: $pagina <br> Total de registros por página: $total_registros_pagina <br> deslocamento: $deslocamento";
+		$tweets = $tweet->getPorPagina($total_registros_pagina, $deslocamento);
 		$this->view->tweets = $tweets;
 
 		$usuario = Container::getModel('Usuario');
@@ -78,7 +87,7 @@ class AppController extends Action {
 			$usuarios = $busca->getAll();	
 
 		}
-		
+
 		$usuario = Container::getModel('Usuario');
 		$usuario->__set('id', $_SESSION['id']);
 
@@ -93,6 +102,7 @@ class AppController extends Action {
 
 	public function acao(){
 		$this->validaLogin();
+
 
 		$acao = isset($_GET['acao']) ? $_GET['acao'] : '';
 		$followed_id = isset($_GET['id_usuario']) ? $_GET['id_usuario'] : '';

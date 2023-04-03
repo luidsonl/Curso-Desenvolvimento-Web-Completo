@@ -28,7 +28,7 @@ $schema->create($table, function($table){
     $table->text('descricao');
     $table->decimal('preco', 11, 2);
     $table->string('fabricante', 60);
-    $table->date('dt_criacao');
+    $table->timestamps();
 });
 //Populate table products
 $db->table($table)->insert([
@@ -36,19 +36,22 @@ $db->table($table)->insert([
     'descricao' => 'Android Oreo',
     'preco' => 899.00,
     'fabricante' => 'Motorola',
-    'dt_criacao' => '2019-10-22'
+    'created_at' => '2019-10-22',
+    'updated_at' => '2019-10-22'
 ]);
 $db->table($table)->insert([
     'titulo' => 'Iphone',
     'descricao' => 'IOS 12 4GB',
     'preco' => 4999.00,
     'fabricante' => 'Apple',
-    'dt_criacao' => '2020-01-10'
+    'created_at' => '2023-04-03',
+    'updated_at' => '2023-04-03'
 ]);
 $db->table($table)->insert([
     'titulo' => 'Nokia Tijolão',
     'descricao' => 'Inquebrável',
     'preco' => 500.00,
     'fabricante' => 'Nokia',
-    'dt_criacao' => '2003-01-10'
+    'created_at' => '2023-04-03',
+    'updated_at' => '2023-04-03'
 ]);

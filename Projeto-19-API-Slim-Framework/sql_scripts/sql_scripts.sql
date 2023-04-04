@@ -11,4 +11,4 @@ CREATE TABLE usuarios(
 	senha VARCHAR(32) NOT NULL 
 );
 
-INSERT INTO usuarios (nome, email, senha) VALUES ('luidson', 'luidson@email.com', MD5('123456'));
+INSERT INTO usuarios (nome, email, senha) VALUES ('teste', 'teste@email.com', MD5('123456'));

@@ -26,5 +26,7 @@ return [
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
         ],
+        //Secret
+        'secretKey' =>'fullmetalalchemistehmelhorquenaruto'
     ],
 ];

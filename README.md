@@ -65,7 +65,7 @@ https://www.udemy.com/course/web-completo/
 ### 14. App - Pesquisa CEP
 * App simples feito com a API viacep
 
-### 15 App - Lista de Tarefas
+### 15. App - Lista de Tarefas
 * Uso do PHP no backend
 * PDO
 * Integração com o banco de dados MySQL
@@ -77,17 +77,17 @@ https://www.udemy.com/course/web-completo/
 	* Editar tarefa
 	* Definir tarefa como cncluida
 
-### 16 App - Dashboard
+### 16. App - Dashboard
 * Php, jquery e ajax
 * Front-end feito com html, bootstrap e javascript
 * Integração de front-end, back-end e banco de dados com o uso do php
 * Função de filtrar por mês e exibir os valores a partir das informações do banco de dados.
 
-### 17 Miniframework
+### 17. Miniframework
 * PHP
 * Criação de um framework simples usando arquitetura MVC
 
-### 18 Twitter Clone
+### 18. Twitter Clone
 * O Miniframework foi usado como  base
 * Funcionalidades:
 	* Criar conta e logar
@@ -95,3 +95,7 @@ https://www.udemy.com/course/web-completo/
 	* Seguir e deixar de seguir usuarios
 	* Publicar  e excluir tweets
 	* Visualizar tweets na timeline
+
+### 19. Api Com Slim Framework
+* API simples para cadastro de produtos feita com slim framework
+* As bibliotecas usadas estão desatualizadas

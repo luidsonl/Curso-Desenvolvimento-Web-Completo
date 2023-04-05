@@ -25,6 +25,6 @@ $app->post('/api/token', function($request, $response){
 		]);
 	}
 	return $response->withJson([
-			"status"=> "erro"
+			'status'=> 'erro'
 		]);
 });
